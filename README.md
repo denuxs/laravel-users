@@ -4,10 +4,10 @@ La conexión puede ser lenta inicialmente por que estoy usando Heroku como hosti
 
 ## API
 
-* https://pacific-cliffs-38073.herokuapp.com/login
-* https://pacific-cliffs-38073.herokuapp.com/register
-* https://pacific-cliffs-38073.herokuapp.com/api/posts
-* https://pacific-cliffs-38073.herokuapp.com/api/users
+* POST https://pacific-cliffs-38073.herokuapp.com/login
+* POST https://pacific-cliffs-38073.herokuapp.com/register
+* CRUD https://pacific-cliffs-38073.herokuapp.com/api/posts
+* CRUD https://pacific-cliffs-38073.herokuapp.com/api/users
 
 ## Angular Demo
 
