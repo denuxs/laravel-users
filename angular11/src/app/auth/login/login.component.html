@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <div class="d-flex justify-content-center mb-4">
+      <img src="assets/logo.jpg" class="img-fluid">
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center text-uppercase">Ingreso</h3>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">
+              Email:
+              <input type="text" class="form-control" formControlName="email" />
+            </label>
+          </div>
+          <div class="col-6">
+            <label class="form-label">
+              Contrasenia:
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button
+            type="submit"
+            class="btn btn-primary text-uppercase"
+            [disabled]="!form.valid"
+          >
+            Ingresar
+          </button>
+        </div>
+
+        <div *ngIf="error" class="text-danger text-center mt-4">
+          <div>{{ error }}</div>
+        </div>
+      </div>
+    </form>
+
+    <p class="text-center mt-5">
+      Aun no te has registrado? <a routerLink="/signup">Registrarme</a>
+    </p>
+  </div>
+</div>

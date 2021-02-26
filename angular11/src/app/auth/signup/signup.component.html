@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <div class="d-flex justify-content-center mb-4">
+      <img src="assets/logo.jpg" class="img-fluid">
+    </div>
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center text-uppercase">Registro</h3>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">
+              Nombre:
+              <input
+                type="text"
+                class="form-control"
+                formControlName="first_name"
+              />
+            </label>
+          </div>
+          <div class="col-6">
+            <label class="form-label">
+              Apellido:
+              <input
+                type="text"
+                class="form-control"
+                formControlName="last_name"
+              />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">
+              Telefono:
+              <input
+                type="number"
+                class="form-control"
+                formControlName="phone"
+              />
+            </label>
+          </div>
+          <div class="col-6">
+            <label class="form-label">
+              Email:
+              <input type="text" class="form-control" formControlName="email" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">
+              Contrasenia:
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+              />
+            </label>
+          </div>
+
+          <div class="col-6">
+            <label class="form-label">
+              Confirmar Contrasenia:
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password_confirmation"
+              />
+            </label>
+          </div>
+        </div>
+
+        <ul *ngIf="errors" class="list-unstyled">
+          <li *ngFor="let error of errors" class="text-danger">
+            {{ error }}
+          </li>
+        </ul>
+
+        <div class="d-flex justify-content-center">
+          <button
+            type="submit"
+            class="btn btn-primary text-uppercase"
+            [disabled]="!form.valid"
+          >
+            Registrarme
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <p class="text-center mt-5">
+      Ya tienes cuenta? <a routerLink="/login">Iniciar Sesion</a>
+    </p>
+  </div>
+</div>

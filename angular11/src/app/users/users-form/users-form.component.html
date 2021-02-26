@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-6">
+    <form [formGroup]="form" (ngSubmit)="handleSave()" class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center text-uppercase">Usuario</h3>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">
+              Nombre:
+              <input
+                type="text"
+                class="form-control"
+                formControlName="first_name"
+              />
+            </label>
+          </div>
+          <div class="col-6">
+            <label class="form-label">
+              Apellido:
+              <input
+                type="text"
+                class="form-control"
+                formControlName="last_name"
+              />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">
+              Telefono:
+              <input
+                type="number"
+                class="form-control"
+                formControlName="phone"
+              />
+            </label>
+          </div>
+          <div class="col-6">
+            <label class="form-label">
+              Email:
+              <input type="text" class="form-control" formControlName="email" />
+            </label>
+          </div>
+        </div>
+        <div class="row" *ngIf="isNew">
+          <div class="col-12">
+            <label class="form-label">Contrasena</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <div class="col-12">
+            <label class="form-label"> Confirmar Contrasenia: </label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password_confirmation"
+            />
+          </div>
+        </div>
+
+        <ul *ngIf="errors" class="list-unstyled">
+          <li *ngFor="let error of errors" class="text-danger">
+            {{ error }}
+          </li>
+        </ul>
+
+        <div class="d-flex justify-content-center">
+          <button
+            type="submit"
+            class="btn btn-primary text-uppercase"
+            [disabled]="!form.valid"
+          >
+            Guardar
+          </button>
+          <a class="btn btn-link" [routerLink]="['/users']" role="button"
+            >Cancelar</a
+          >
+        </div>
+      </div>
+    </form>
+
+    <p class="text-center mt-5">
+      Ya tienes cuenta? <a routerLink="/login">Iniciar Sesion</a>
+    </p>
+  </div>
+</div>
